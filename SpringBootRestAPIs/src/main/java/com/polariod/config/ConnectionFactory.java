@@ -11,7 +11,7 @@ import com.mysql.jdbc.jdbc2.optional.MysqlDataSource;
 public class ConnectionFactory {
 	public static Connection createConnection() throws AppException {
 		Connection conn = null;
-		
+	
 		try {
     		Properties props = new Properties();
     		FileInputStream fis = new FileInputStream("db.properties");
