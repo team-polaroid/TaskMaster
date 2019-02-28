@@ -27,7 +27,7 @@
           <nodeVersion>v10.15.1</nodeVersion>
           <npmVersion>6.4.1</npmVersion>
 
-          <nodeDownloadRoot>https://nodejs.org/dist/latest-v10.x/</nodeDownloadRoot>
+          <nodeDownloadRoot>https://nodejs.org/dist/</nodeDownloadRoot>
         </configuration>
 
         <executions>
