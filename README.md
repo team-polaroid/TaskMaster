@@ -1,16 +1,19 @@
 # TaskMaster
 Web-based application that tracks tasks or duties of projects.
 
+------------------------------------------------------------------------------------------------------------
 Running template project:
   Spring Components:
   1. Navigate to Server directory on command line.
   2. type mvnw spring-boot: run
   3. After server initializes, enter localhost:8080/<spring component url> in a browser to test.
+  
   Angular Components:
   1. Navigate to Client directory on command line.
   2. enter npm install to update packages
   3. enter ng serve
   4. After server initializes, enter localhost:4200/<angular component url> in a browser to test
+  
   Build Entire project:
   1. Navigate to the projects main directory on command line
   2. Enter mvnw clean package
@@ -18,6 +21,7 @@ Running template project:
      -JAVA_HOME environmental variable must be configured correctly
   3. on the command line type java -jar <path>/taskmaster/server/target/taskmaster.jar
   4. Enter localhost:8080 to test
+-------------------------------------------------------------------------------------------------------------------
   
 If the user wants to interact with this and see the results:
   1. right click on the project in eclipse and go to the Local Terminal
