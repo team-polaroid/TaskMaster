@@ -5,7 +5,7 @@ Web-based application that tracks tasks or duties of projects.
 Running template project:
   Spring Components:
   1. Navigate to Server directory on command line.
-  2. type mvnw spring-boot: run
+  2. type mvn spring-boot: run (must have maven configured)
   3. After server initializes, enter localhost:8080/<spring component url> in a browser to test.
   
   Angular Components:
