@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import { Router } from '@angular/router';
+import { AuthService } from '../../auth.service';
+
 declare interface RouteInfo {
     path: string;
     title: string;
@@ -20,8 +23,8 @@ export const ROUTES: RouteInfo[] = [
 
     { path: '/user-profile', title: 'User Profile',  icon:'users_single-02', class: '' },
     { path: '/table-list', title: 'Table List',  icon:'design_bullet-list-67', class: '' },
-    { path: '/typography', title: 'Typography',  icon:'text_caps-small', class: '' },
-    { path: '/upgrade', title: 'Upgrade to PRO',  icon:'objects_spaceship', class: 'active active-pro' }*/
+    { path: '/typography', title: 'Typography',  icon:'text_caps-small', class: '' },*/
+    { path: '/logout', title: 'Log Out',  icon:'objects_spaceship', class: 'active active-pro' }
 
 ];
 
@@ -33,15 +36,21 @@ export const ROUTES: RouteInfo[] = [
 export class SidebarComponent implements OnInit {
   menuItems: any[];
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) { }
 
   ngOnInit() {
     this.menuItems = ROUTES.filter(menuItem => menuItem);
   }
+  
   isMobileMenu() {
       if ( window.innerWidth > 991) {
           return false;
       }
       return true;
   };
+
+  logout(){
+    this.authService.logout();
+    this.router.navigateByUrl('/login');
+  }
 }

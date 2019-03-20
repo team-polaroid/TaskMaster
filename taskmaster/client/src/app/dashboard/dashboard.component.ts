@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 //import * as Chartist from 'chartist';
 
+import { AuthService } from '../auth.service';
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -57,7 +60,7 @@ export class DashboardComponent implements OnInit {
       return "rgb(" + r + ", " + g + ", " + b + ")";
     }
   }
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router){}
 
   ngOnInit() {
     this.chartColor = "#FFFFFF";

@@ -6,6 +6,7 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 import { ProjectListComponent} from "../../project-list/project-list.component";
+import { LogoutComponent } from '../../logout/logout.component';      // added
 
 import { ChartsModule } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
@@ -23,6 +24,7 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [
     DashboardComponent,
     ProjectListComponent,
+    LogoutComponent         // added
   ]
 })
 
