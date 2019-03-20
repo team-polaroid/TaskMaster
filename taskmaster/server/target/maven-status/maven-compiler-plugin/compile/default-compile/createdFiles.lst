@@ -1,0 +1,7 @@
+org\polaroid\taskmaster\controller\ProjectController.class
+org\polaroid\taskmaster\TaskmasterApplication.class
+org\polaroid\taskmaster\controller\TaskController.class
+org\polaroid\taskmaster\repository\TaskRepository.class
+org\polaroid\taskmaster\model\Project.class
+org\polaroid\taskmaster\repository\ProjectRepository.class
+org\polaroid\taskmaster\model\Task.class
