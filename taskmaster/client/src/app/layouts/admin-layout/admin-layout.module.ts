@@ -11,6 +11,7 @@ import { LogoutComponent } from '../../logout/logout.component';      // added
 import { ChartsModule } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
+import {ProjectNewComponent} from "../../project-new/project-new.component";
 
 @NgModule({
   imports: [
@@ -24,6 +25,7 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [
     DashboardComponent,
     ProjectListComponent,
+    ProjectNewComponent,
     LogoutComponent         // added
   ]
 })

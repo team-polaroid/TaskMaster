@@ -15,7 +15,7 @@
             <form [formGroup]="loginForm" (ngSubmit)="login()">
               <div class="form-group">
                 <label for="email">Email address</label>
-                <input type="email" class="form-control" formControlName="email" placeholder="enter mail">
+                <input type="email" class="form-control" formControlName="email" placeholder="enter email">
                 <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
                   <div *ngIf="formControls.email.errors.required">Email is required</div>
                 </div>
@@ -27,7 +27,7 @@
                   <div *ngIf="formControls.password.errors.required">Password is required</div>
                 </div>
               </div>
-              <button type="submit" class="btn btn-danger">Login</button>
+              <button type="submit" class="btn btn-danger">Submit</button>
             </form>
           </div>
         </div>

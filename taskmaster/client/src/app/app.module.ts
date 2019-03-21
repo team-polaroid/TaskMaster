@@ -18,6 +18,7 @@ import { ToastrModule } from 'ngx-toastr';
 
 import { ComponentsModule } from './components/components.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+import { ProjectNewComponent } from './project-new/project-new.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
     LoginComponent,
 
     //NowUI
-    AdminLayoutComponent,
+    AdminLayoutComponent
+
     //LogoutComponent //<--- when trying to implement, bricks login
   ],
   imports: [
