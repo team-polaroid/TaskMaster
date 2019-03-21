@@ -1,28 +1,77 @@
-<h1 style="text-align:center">
-</h1>
-<div class="login">
-  <h2 class="login-header">TaskMaster Login
-  </h2>
-  <form [formGroup]="loginForm" class="login-container" (ngSubmit)="login()">
-
-    <p [ngClass]="{ 'has-error': isSubmitted && formControls.email.errors }">
-      <input type="email" placeholder="Email" formControlName="email">
-    </p>
-
-    <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
-      <div *ngIf="formControls.email.errors.required">Email is required</div>
+<div class="wrapper">
+  <div class="panel-header panel-header-sm">
+    <div class="header text-center">
+      <h1 class="title">TaskMaster</h1>
     </div>
-
-    <p [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }">
-      <input type="password" placeholder="Password" formControlName="password">
-    </p>
-
-    <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
-      <div *ngIf="formControls.password.errors.required">Password is required</div>
+  </div>
+  <div class="main-content">
+    <div class="col-md-5">
+      <div>
+        <div class="card text-center card-login">
+          <div class="card-header bg-danger text-white card-header-primary">
+            <h5>Login</h5>
+          </div>
+          <div class="card-body">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+              <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" formControlName="email" placeholder="enter mail">
+                <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+                  <div *ngIf="formControls.email.errors.required">Email is required</div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" class="form-control" formControlName="password" placeholder="enter password">
+                <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+                  <div *ngIf="formControls.password.errors.required">Password is required</div>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-danger">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-
-    <p>
-      <input type="submit" value="Log in">
-    </p>
-  </form>
+  </div>
 </div>
+
+    <!--  <div class="card card-nav-tabs text-center card-login">
+       <div class="card-header card-header-primary">
+         <h5>TaskMaster Login</h5>
+       </div>
+       <div class="card-body">
+         <form [formGroup]="loginForm" (ngSubmit)="login()">
+           <div class="row">
+             <div class="col-md-5 pr-1">
+               <div [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }" class="form-group">
+                 <label>Email</label>
+                 <input type="email" class="form-control" formControlName="email" placeholder="enter your email">
+                 <div *ngIf="isSubmitted && formControls.email.errors" class="help-block">
+                   <div *ngIf="formControls.email.errors.required">Email is required</div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="row">
+             <div class="col-md-5 pr-1"><input type="password" class="form-control" formControlName="password" placeholder="enter your password">
+               <div [ngClass]="{ 'has-error': isSubmitted && formControls.password.errors }" class="form-group">
+                 <label>Password</label>
+
+                 <div *ngIf="isSubmitted && formControls.password.errors" class="help-block">
+                   <div *ngIf="formControls.password.errors.required">Password is required</div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="row">
+             <div class="button-container">
+               <button class="btn btn-danger btn-round">Login</button>
+                 <input type="submit" value="LOGIN">
+             </div>
+           </div>
+         </form> -->
+
+
+
+

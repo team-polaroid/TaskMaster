@@ -1,0 +1,17 @@
+.card-login{
+  width: 75%;
+  left: 85%;
+
+  .card-header{
+    &:not([data-background-color]){
+      background-color: red;
+    }
+    padding: 15px 15px 0;
+    border: 0;
+
+    .card-title{
+      position: center;
+      margin-top: 10px;
+    }
+  }
+}
