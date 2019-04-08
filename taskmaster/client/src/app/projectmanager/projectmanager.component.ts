@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-//import * as Chartist from 'chartist';
+import * as Chartist from 'chartist';
 
-//import { AuthService } from '../auth.service';
-//import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-dashboard',
-  templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  selector: 'app-projectmanager',
+  templateUrl: './projectmanager.component.html',
+  styleUrls: ['./projectmanager.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class ProjectmanagerComponent implements OnInit {
+
   public lineBigDashboardChartType;
   public gradientStroke;
   public chartColor;
@@ -60,11 +59,9 @@ export class DashboardComponent implements OnInit {
       return "rgb(" + r + ", " + g + ", " + b + ")";
     }
   }
-  // constructor(private authService: AuthService, private router: Router){}
-  constructor(){}
-
-
+  
   ngOnInit() {
+
     this.chartColor = "#FFFFFF";
     this.canvas = document.getElementById("bigDashboardChart");
     this.ctx = this.canvas.getContext("2d");
@@ -410,5 +407,8 @@ export class DashboardComponent implements OnInit {
       }
 
     this.lineChartGradientsNumbersType = 'bar';
+
   }
+  
+
 }

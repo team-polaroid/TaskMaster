@@ -9,7 +9,7 @@ import { User, Role } from '../_models';
 export class FakeBackendInterceptor implements HttpInterceptor {
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const users: User[] = [
-            { id: 1, username: 'admin', password: 'admin', firstName: 'Admin', lastName: 'User', role: Role.Admin },
+            { id: 1, username: 'projectmanager', password: 'password2', firstName: 'Manager', lastName: 'User', role: Role.Admin },
             { id: 2, username: 'foreman', password: 'password1', firstName: 'Normal', lastName: 'User', role: Role.User }
         ];
 

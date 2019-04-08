@@ -1,61 +1,9 @@
-/* import { Component, OnInit } from '@angular/core';
-
-import { FormBuilder, FormGroup, Validators } from  '@angular/forms';
-import { ActivatedRoute,Router } from  '@angular/router';
-import { User } from  '../user';
-import { AuthService } from  '../auth.service';
-
-@Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
-})
-export class LoginComponent implements OnInit {
-
-  constructor(private authService: AuthService, private router: Router, private formBuilder: FormBuilder, private route: ActivatedRoute,) { }
-
-  loginForm: FormGroup;
-  isSubmitted = false;
-
-  // loading = false;
-  // submitted = false;
-  // returnUrl: string;
-  // error = '';
-
-  ngOnInit() {
-    this.loginForm = this.formBuilder.group({
-      email: ['', Validators.required],
-      password: ['', Validators.required]
-    });
-
-            // // reset login status
-            this.authService.logout();
-
-            // // get return url from route parameters or default to '/'
-            // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
-  }
-
-  get formControls() { return this.loginForm.controls; }
-
-  login(){
-    console.log(this.loginForm.value);
-    this.isSubmitted = true;
-    if(this.loginForm.invalid){
-      return;
-    }
-    this.authService.login(this.loginForm.value);
-    //this.router.navigateByUrl('/admin');
-    this.router.navigateByUrl('/dashboard')
-  }
-  
-} */
-
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { first } from 'rxjs/operators';
 
-import { AuthenticationService } from '../_services';
+import { AuthenticationService, UserService } from '../_services';
 
 @Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
@@ -69,7 +17,8 @@ export class LoginComponent implements OnInit {
         private formBuilder: FormBuilder,
         private route: ActivatedRoute,
         private router: Router,
-        private authenticationService: AuthenticationService
+        private authenticationService: AuthenticationService,
+        private userService: UserService
     ) { 
         // redirect to home if already logged in
         if (this.authenticationService.currentUserValue) { 
@@ -84,7 +33,9 @@ export class LoginComponent implements OnInit {
         });
 
         // get return url from route parameters or default to '/dashboard'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard';    // default to dashboard for foremen
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'dashboard';    // default to dashboard for foremen
+        //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/projectmanager';    // default to dashboard for project managers
+
     }
 
     // convenience getter for easy access to form fields
@@ -104,7 +55,18 @@ export class LoginComponent implements OnInit {
             .subscribe(
                 data => {
                     // need to add more authentication and routing to proper views for other roles other than formen
-                    this.router.navigate([this.returnUrl]);
+
+                    var check = localStorage.getItem('currentUser');
+                    console.log(check);
+                    var retrievedData = JSON.parse(check);
+                    console.log(retrievedData)          
+
+                    if (retrievedData.id == 1 ) {       // project manager id is 1
+                      this.router.navigate(['projectmanager']);
+                    }
+                    else if (retrievedData.id == 2) {   // foremen id is 2
+                      this.router.navigate([this.returnUrl]);
+                    }
                 },
                 error => {
                     this.error = error;

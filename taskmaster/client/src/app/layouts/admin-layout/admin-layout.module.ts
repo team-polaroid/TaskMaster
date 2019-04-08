@@ -5,6 +5,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdminLayoutRoutes } from './admin-layout.routing';
 
 import { DashboardComponent } from '../../dashboard/dashboard.component';
+
+import { ProjectmanagerComponent } from '../../projectmanager/projectmanager.component'; // added 
 import { ProjectListComponent} from "../../project-list/project-list.component";
 import { LogoutComponent } from '../../logout/logout.component';      // added
 
@@ -24,7 +26,8 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [
     DashboardComponent,
     ProjectListComponent,
-    LogoutComponent         // added
+    LogoutComponent,         // added
+    ProjectmanagerComponent  // added 
   ]
 })
 

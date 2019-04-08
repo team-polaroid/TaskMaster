@@ -16,13 +16,16 @@ import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 
+
 import { ComponentsModule } from './components/components.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
 
 import { NgxPermissionsModule } from 'ngx-permissions';
 
 import { fakeBackendProvider } from './_helpers'
-import { JwtInterceptor, ErrorInterceptor } from './_helpers'
+import { JwtInterceptor, ErrorInterceptor } from './_helpers';
+//import { ProjectmanagerComponent } from './projectmanager/projectmanager.component';
+//import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
 
 @NgModule({
   declarations: [
@@ -32,6 +35,8 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers'
     //NowUI
     AdminLayoutComponent,
 
+    //ProjectmanagerComponent
+
     //LogoutComponent //<--- when trying to implement, bricks login
   ],
   imports: [
@@ -39,6 +44,9 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers'
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    
+    //AdminLayoutModule,
+
 
   // NowUI imports
   BrowserAnimationsModule,

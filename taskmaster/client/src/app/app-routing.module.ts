@@ -12,10 +12,12 @@ import { BrowserModule } from '@angular/platform-browser';
 
 // AdminLayoutcomponent == sidebar?
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-import { from } from 'rxjs';
-import { LogoutComponent } from './logout/logout.component';
-import { NgxPermissionsGuard } from 'ngx-permissions';
+// import { DashboardComponent } from './dashboard/dashboard.component';
+// import { from } from 'rxjs';
+// import { LogoutComponent } from './logout/logout.component';
+// import { NgxPermissionsGuard } from 'ngx-permissions';
+
+// import { ProjectmanagerComponent} from './projectmanager/projectmanager.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'login' },
@@ -26,15 +28,12 @@ const routes: Routes = [
   
   // from NowUI
   //{ path: 'dashboard', redirectTo: 'dashboard', canActivate: [AuthGuard] },
-  { path: 'dashboard', redirectTo: 'dashboard', canActivate: [AuthGuard, NgxPermissionsGuard], 
-  data: {
-      permissions: {
-          only: 'FOREMEN',
-      } 
-  }},
-
+  { path: 'projectmanager', redirectTo: 'projectmanager', canActivate: [AuthGuard]},
+  { path: 'dashboard', redirectTo: 'dashboard', canActivate: [AuthGuard]}, 
   { path: '', component: AdminLayoutComponent, children: [{path: '', 
   loadChildren: './layouts/admin-layout/admin-layout.module#AdminLayoutModule'}], canActivate: [AuthGuard] },
+
+  // check the admin-layout module as well for issues 
   
   //{ path: '**', redirectTo: 'login' },
 
