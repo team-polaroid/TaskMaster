@@ -1,7 +1,7 @@
 <div class="panel-header panel-header-lg header-title">
   <div class="panel-header">
     <div class="header text-center">
-      <h2 class="title large-title">Taskmaster</h2>
+      <h2 class="title large-title">Welcome, Foreman {{foremanName}}</h2>
     </div>
   </div>
     <canvas baseChart id="bigDashboardChart"
@@ -16,87 +16,110 @@
 
 <div class="main-content">
   <div class="row">
+
     <div class="col-lg-4">
       <div class="card card-chart">
         <div class="card-header">
-          <h5 class="card-category">Card Category 1</h5>
-          <h4 class="card-title">Card Title</h4>
-          <div ngbDropdown>
-            <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
-              <i class="now-ui-icons loader_gear"></i>
-            </button>
-            <div ngbDropdownMenu class="dropdown-menu-right">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <a class="dropdown-item text-danger" href="#">Remove Data</a>
-            </div>
-          </div>
+          <h5 class="card-category">Tasks</h5>
+              <!-- <h4 class="card-title">Card Title</h4> -->
+              <!--<div ngbDropdown>
+                <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
+                  <i class="now-ui-icons loader_gear"></i>
+                </button>
+                <div ngbDropdownMenu class="dropdown-menu-right">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                  <a class="dropdown-item text-danger" href="#">Remove Data</a>
+                </div>
+              </div>-->
         </div>
-        <div class="card-body">
-          <div class="chart-area">
-            <canvas baseChart id="lineChartExample"
-                        [datasets]="lineChartData"
-                        [labels]="lineChartLabels"
-                        [colors]="lineChartColors"
-                        [options]="lineChartOptions"
-                        [chartType]="lineChartType"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)"></canvas>
-          </div>
+         <div class="card-body">
+              <!-- <div class="chart-area">
+                <canvas baseChart id="lineChartExample"
+                            [datasets]="lineChartData"
+                            [labels]="lineChartLabels"
+                            [colors]="lineChartColors"
+                            [options]="lineChartOptions"
+                            [chartType]="lineChartType"
+                            (chartHover)="chartHovered($event)"
+                            (chartClick)="chartClicked($event)"></canvas>
+              </div> -->
+          <table>
+            <tr>
+              <th>Tasks</th>
+              <th>Approval Status</th>
+            </tr>
+            <tr>
+              <td>Job A</td>
+              <td>N</td>
+            </tr>
+            <tr>
+              <td>Job B</td>
+              <td>Y</td>
+            </tr>
+          </table>
         </div>
         <div class="card-footer">
-          <div class="stats">
-            <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
-          </div>
+            <!-- <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div> -->
         </div>
       </div>
     </div>
+
     <div class="col-lg-4 col-md-6">
       <div class="card card-chart">
         <div class="card-header">
-          <h5 class="card-category">Card Category 2</h5>
-          <h4 class="card-title">Card Title</h4>
-          <div ngbDropdown>
-            <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
-              <i class="now-ui-icons loader_gear"></i>
-            </button>
-            <div ngbDropdownMenu class="dropdown-menu-right">
-              <a class="dropdown-item" href="#">Action</a>
-              <a class="dropdown-item" href="#">Another action</a>
-              <a class="dropdown-item" href="#">Something else here</a>
-              <a class="dropdown-item text-danger" href="#">Remove Data</a>
+          <h5 class="card-category">Image Preview</h5>
+            <!--<h4 class="card-title">Card Title</h4>-->
+            <!-- <div ngbDropdown>
+              <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
+                <i class="now-ui-icons loader_gear"></i>
+              </button>
+              <div ngbDropdownMenu class="dropdown-menu-right">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+                <a class="dropdown-item text-danger" href="#">Remove Data</a>
+              </div>
+            </div>-->
+        </div>
+        <div class="card-body">
+          <div align="center">
+            <span style="color:red;" *ngIf="message">{{message}}</span>
+            <input #file type="file" accept='image/*' (change)="preview(file.files)" />
+            <img [src]="imgURL" height="200" *ngIf="imgURL">
+          </div>
+          <br><br>
+          <div align="center">
+            <button mat-raised-button (click)="clickSubmit()">Submit</button>
+            <br><br>
+            <div *ngIf="!isCollapsed">
+              <p>{{submitMsg}}</p>
             </div>
           </div>
         </div>
-        <div class="card-body">
-          <div class="chart-area">
-            <!-- <canvas id="lineChartExampleWithNumbersAndGrid"></canvas> -->
-            <canvas baseChart id="lineChartExampleWithNumbersAndGrid"
-                        [datasets]="lineChartWithNumbersAndGridData"
-                        [labels]="lineChartWithNumbersAndGridLabels"
-                        [colors]="lineChartWithNumbersAndGridColors"
-                        [options]="lineChartWithNumbersAndGridOptions"
-                        [chartType]="lineChartWithNumbersAndGridType"
-                        (chartHover)="chartHovered($event)"
-                        (chartClick)="chartClicked($event)"></canvas>
-          </div>
-        </div>
+  
         <div class="card-footer">
-          <div class="stats">
-            <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
-          </div>
+           <!-- <div class="stats">
+              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
+            </div>-->
         </div>
       </div>
     </div>
+
     <div class="col-lg-4 col-md-6">
       <div class="card card-chart">
         <div class="card-header">
-          <h5 class="card-category">Card Category 3</h5>
-          <h4 class="card-title">Card Title</h4>
+          <h5 class="card-category">Template</h5>
+          <!--<h4 class="card-title">Card Title</h4>-->
         </div>
         <div class="card-body">
-          <div class="chart-area">
+          Insert template image here
+          <br><br>
+          Notes left by manager
+          <!--<div class="chart-area">
             <canvas baseChart id="barChartSimpleGradientsNumbers"
                         [datasets]="lineChartGradientsNumbersData"
                         [labels]="lineChartGradientsNumbersLabels"
@@ -105,17 +128,19 @@
                         [chartType]="lineChartGradientsNumbersType"
                         (chartHover)="chartHovered($event)"
                         (chartClick)="chartClicked($event)"></canvas>
-          </div>
+          </div>-->
         </div>
         <div class="card-footer">
-          <div class="stats">
+          <!-- <div class="stats">
             <i class="now-ui-icons ui-2_time-alarm"></i> Last 7 days
-          </div>
+          </div> -->
         </div>
       </div>
-    </div>
+    </div>  
+
   </div>
-  <div class="row">
+
+  <!-- <div class="row">
     <div class="col-md-6">
       <div class="card  card-tasks">
         <div class="card-header ">
@@ -196,6 +221,8 @@
         </div>
       </div>
     </div>
+
+  
     <div class="col-md-6">
       <div class="card">
         <div class="card-header">
@@ -296,5 +323,6 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+ 
 </div>
