@@ -11,13 +11,18 @@ import { LogoutComponent } from './logout/logout.component';
 // Now UI imports
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
 
 import { ComponentsModule } from './components/components.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.component';
+
+import { NgxPermissionsModule } from 'ngx-permissions';
+
+import { fakeBackendProvider } from './_helpers'
+import { JwtInterceptor, ErrorInterceptor } from './_helpers'
 
 @NgModule({
   declarations: [
@@ -26,6 +31,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
 
     //NowUI
     AdminLayoutComponent,
+
     //LogoutComponent //<--- when trying to implement, bricks login
   ],
   imports: [
@@ -40,9 +46,16 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout.compon
   ComponentsModule,
   RouterModule,
   NgbModule,
-  ToastrModule.forRoot()
+  ToastrModule.forRoot(),
+
+  NgxPermissionsModule.forRoot()
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true },
+    // provider used to create fake backend
+    fakeBackendProvider
+  ],  
+    bootstrap: [AppComponent]
 })
 export class AppModule { }
