@@ -7,7 +7,7 @@ taskmaster/client/node_modules/node-sass/vendor/win32-x64-64/binding.node
 /bazel-out
 /integration/bazel/bazel-*
 e2e_test.*
-node_modules
+node_modules/
 tools/gulp-tasks/cldr/cldr-data/
 
 # Include when developing application packages.
