@@ -34,8 +34,8 @@
                 </div>
               </div>-->
         </div>
-         <div class="card-body">
-          <table>
+        <div class="card-body">
+          <!-- <table>
             <tr>
               <th>Tasks</th>
               <th>Approval Status</th>
@@ -48,7 +48,32 @@
               <td>Job B</td>
               <td>Y</td>
             </tr>
-          </table>
+          </table> -->
+          <!-- <mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSource">
+
+            <ng-container matColumnDef="seqNo">
+                <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
+                <mat-cell *matCellDef="let lesson">{{lesson.seqNo}}</mat-cell>
+            </ng-container>
+        
+            <ng-container matColumnDef="description">
+                <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
+                <mat-cell class="description-cell"
+                          *matCellDef="let lesson">{{lesson.description}}</mat-cell>
+        
+            </ng-container>
+        
+            <ng-container matColumnDef="duration">
+                <mat-header-cell *matHeaderCellDef>Duration</mat-header-cell>
+                <mat-cell class="duration-cell"
+                          *matCellDef="let lesson">{{lesson.duration}}</mat-cell>
+            </ng-container>
+        
+            <mat-row *matRowDef="let row; columns: displayedColumns" (click)="onRowClicked(row)"></mat-row>
+        
+            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+        
+          </mat-table> -->
         </div>
         <div class="card-footer">
             <!-- <div class="stats">

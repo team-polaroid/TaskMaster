@@ -4,12 +4,27 @@ import { Component, OnInit } from '@angular/core';
 //import { AuthService } from '../auth.service';
 //import { Router } from '@angular/router';
 
+export interface Announcements {
+  announcement: string;
+  position: number;
+  course: string;
+}
+
+const ANNOUNCEMENT: Announcements[] = [
+  {position: 1, course: 'CS1234', announcement: 'Analysis of Algorithms'},
+  {position: 2, course: 'CS4253', announcement: 'Database Systems'},
+  {position: 3, course: 'CS4833', announcement: 'Artificial Intelligence'},
+];
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
+  displayedColumns = ["seqNo", "description", "duration"]; // Determins visual order of the columns
+  dataSource = ANNOUNCEMENT;
 
   isCollapsed = true;
   canSubmit = false;
@@ -22,6 +37,10 @@ export class DashboardComponent implements OnInit {
   public imagePath;
   imgURL: any;
   public message: string;
+
+  onRowClicked(row) {
+    console.log('Row clicked: ', row);
+  }
 
   preview(files) {
     if (files.length === 0) {

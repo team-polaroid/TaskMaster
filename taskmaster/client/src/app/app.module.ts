@@ -8,6 +8,9 @@ import { LoginComponent } from './login/login.component';
 
 import { LogoutComponent } from './logout/logout.component';
 
+import { MatInputModule, MatPaginatorModule, MatProgressSpinnerModule, 
+  MatSortModule, MatTableModule } from "@angular/material";
+
 // Now UI imports
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -42,6 +45,10 @@ import { JwtInterceptor, ErrorInterceptor } from './_helpers';
   imports: [
     BrowserModule,
     FormsModule,
+    MatInputModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
     ReactiveFormsModule,
     AppRoutingModule,
     
