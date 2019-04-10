@@ -27,11 +27,10 @@ export class DashboardComponent implements OnInit {
   dataSource = ANNOUNCEMENT;
 
   isCollapsed = true;
+  isTemplateCollapsed = true;
+
   canSubmit = false;
   submitMsg: string;
-
-  // Get value of foreman name after user login
-  foremanName = 'InsertNameHere';
 
   // Upload image
   public imagePath;
@@ -61,6 +60,10 @@ export class DashboardComponent implements OnInit {
     reader.onload = (_event) => {
         this.imgURL = reader.result;
     }
+  }
+
+  clickViewTask() {
+    this.isTemplateCollapsed = false;
   }
 
   clickSubmit() {

@@ -1,7 +1,7 @@
 <div class="panel-header panel-header-lg header-title">
   <div class="panel-header">
     <div class="header text-center">
-      <h2 class="title large-title">Welcome, Foreman {{foremanName}}</h2>
+      <h2 class="title large-title">Welcome, Foreman</h2>
     </div>
   </div>
     <canvas baseChart id="bigDashboardChart"
@@ -17,88 +17,66 @@
 <div class="main-content">
   <div class="row">
 
+    <!-- Tasks section -->
     <div class="col-lg-4">
       <div class="card card-chart">
         <div class="card-header">
           <h5 class="card-category">Tasks</h5>
-              <!-- <h4 class="card-title">Card Title</h4> -->
-              <!--<div ngbDropdown>
-                <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
-                  <i class="now-ui-icons loader_gear"></i>
-                </button>
-                <div ngbDropdownMenu class="dropdown-menu-right">
-                  <a class="dropdown-item" href="#">Action</a>
-                  <a class="dropdown-item" href="#">Another action</a>
-                  <a class="dropdown-item" href="#">Something else here</a>
-                  <a class="dropdown-item text-danger" href="#">Remove Data</a>
-                </div>
-              </div>-->
         </div>
         <div class="card-body">
-          <!-- <table>
-            <tr>
-              <th>Tasks</th>
-              <th>Approval Status</th>
-            </tr>
-            <tr>
-              <td>Job A</td>
-              <td>N</td>
-            </tr>
-            <tr>
-              <td>Job B</td>
-              <td>Y</td>
-            </tr>
-          </table> -->
-          <!-- <mat-table class="lessons-table mat-elevation-z8" [dataSource]="dataSource">
-
-            <ng-container matColumnDef="seqNo">
-                <mat-header-cell *matHeaderCellDef>#</mat-header-cell>
-                <mat-cell *matCellDef="let lesson">{{lesson.seqNo}}</mat-cell>
-            </ng-container>
-        
-            <ng-container matColumnDef="description">
-                <mat-header-cell *matHeaderCellDef>Description</mat-header-cell>
-                <mat-cell class="description-cell"
-                          *matCellDef="let lesson">{{lesson.description}}</mat-cell>
-        
-            </ng-container>
-        
-            <ng-container matColumnDef="duration">
-                <mat-header-cell *matHeaderCellDef>Duration</mat-header-cell>
-                <mat-cell class="duration-cell"
-                          *matCellDef="let lesson">{{lesson.duration}}</mat-cell>
-            </ng-container>
-        
-            <mat-row *matRowDef="let row; columns: displayedColumns" (click)="onRowClicked(row)"></mat-row>
-        
-            <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
-        
-          </mat-table> -->
+          <table class="table">
+            <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th>Task</th>
+                    <th>Approval Status</th>
+                    <th class="text-right">View Task</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td>Task A</td>
+                    <td>Under Review</td>
+                    <td class="td-actions text-right">
+                      <button type="button" (click)="clickViewTask()" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                        <i class="now-ui-icons ui-2_settings-90"></i>
+                      </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">2</td>
+                    <td>Task B</td>
+                    <td>Approved</td>
+                    <td class="td-actions text-right">
+                      <button type="button" (click)="clickViewTask()" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                        <i class="now-ui-icons ui-2_settings-90"></i>
+                      </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">3</td>
+                    <td>Task C</td>
+                    <td>Awaiting Submission</td>
+                    <td class="td-actions text-right">
+                      <button type="button" (click)="clickViewTask()" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                        <i class="now-ui-icons ui-2_settings-90"></i>
+                      </button>
+                    </td>
+                </tr>
+              </tbody>
+            </table>
         </div>
         <div class="card-footer">
-            <!-- <div class="stats">
-              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
-            </div> -->
         </div>
       </div>
     </div>
 
+    <!-- Image Preview section -->
     <div class="col-lg-4 col-md-6">
       <div class="card card-chart">
         <div class="card-header">
           <h5 class="card-category">Image Preview</h5>
-            <!--<h4 class="card-title">Card Title</h4>-->
-            <!-- <div ngbDropdown>
-              <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
-                <i class="now-ui-icons loader_gear"></i>
-              </button>
-              <div ngbDropdownMenu class="dropdown-menu-right">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <a class="dropdown-item text-danger" href="#">Remove Data</a>
-              </div>
-            </div>-->
         </div>
         <div class="card-body">
           <div align="center">
@@ -117,28 +95,29 @@
         </div>
   
         <div class="card-footer">
-           <!-- <div class="stats">
-              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
-            </div>-->
         </div>
       </div>
     </div>
 
+    <!-- Template section -->
     <div class="col-lg-4 col-md-6">
       <div class="card card-chart">
         <div class="card-header">
           <h5 class="card-category">Template</h5>
-          <!--<h4 class="card-title">Card Title</h4>-->
         </div>
         <div class="card-body">
-          Insert template image here
-          <br><br>
-          Notes left by manager
+          <div *ngIf="isTemplateCollapsed">
+            <p>Please select a task using one of the green buttons.</p>
+          </div>
+          <div *ngIf="!isTemplateCollapsed">
+            <img src="https://www.structure1.com/wp-content/uploads/2018/06/DSC01029-1080x675.jpg" alt="Image failed to load">
+            <br><br>
+            Project manager notes here
+            <br><br>
+            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Foreman notes here..."> 
+          </div>
         </div>
         <div class="card-footer">
-          <!-- <div class="stats">
-            <i class="now-ui-icons ui-2_time-alarm"></i> Last 7 days
-          </div> -->
         </div>
       </div>
     </div>  
