@@ -9,6 +9,10 @@ import * as Chartist from 'chartist';
 })
 export class ProjectmanagerComponent implements OnInit {
 
+  confirmDelete() {
+    confirm("Are you sure you want to delete Site?");
+  }
+
   public lineBigDashboardChartType;
   public gradientStroke;
   public chartColor;
@@ -61,7 +65,7 @@ export class ProjectmanagerComponent implements OnInit {
   }
   
   ngOnInit() {
-
+/*
     this.chartColor = "#FFFFFF";
     this.canvas = document.getElementById("bigDashboardChart");
     this.ctx = this.canvas.getContext("2d");
@@ -407,8 +411,6 @@ export class ProjectmanagerComponent implements OnInit {
       }
 
     this.lineChartGradientsNumbersType = 'bar';
-
+*/
   }
-  
-
 }
