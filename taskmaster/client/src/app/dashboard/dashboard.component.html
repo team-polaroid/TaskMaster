@@ -82,6 +82,7 @@
           <div align="center">
             <span style="color:red;" *ngIf="message">{{message}}</span>
             <input #file type="file" accept='image/*' (change)="preview(file.files)" />
+            <br><br>
             <img [src]="imgURL" height="200" *ngIf="imgURL">
           </div>
           <br><br>
