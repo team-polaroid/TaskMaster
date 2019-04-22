@@ -66,7 +66,7 @@ export class DashboardComponent implements OnInit {
     this.isTemplateCollapsed = false;
   }
 
-  clickSubmit() {
+  clickSubmit(foremanNotes) {
     // this.isCollapsed = !this.isCollapsed;
     if (this.canSubmit === false) {
         this.isCollapsed = false;
@@ -76,6 +76,7 @@ export class DashboardComponent implements OnInit {
         this.submitMsg = 'Submitting...';
 
         // Send stuff to DB at this point
+        console.log(foremanNotes);
     }
   }
 
