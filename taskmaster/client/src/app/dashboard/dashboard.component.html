@@ -87,7 +87,9 @@
           </div>
           <br><br>
           <div align="center">
-            <button mat-raised-button (click)="clickSubmit()">Submit</button>
+            <input [(ngModel)]='foremanInput' type="email" class="form-control" id="exampleFormControlInput1" placeholder="Foreman notes here..."> 
+            <br><br>
+            <button mat-raised-button (click)="clickSubmit(foremanInput)">Submit</button>
             <br><br>
             <div *ngIf="!isCollapsed">
               <p>{{submitMsg}}</p>
@@ -114,8 +116,6 @@
             <img src="https://www.structure1.com/wp-content/uploads/2018/06/DSC01029-1080x675.jpg" alt="Image failed to load">
             <br><br>
             Project manager notes here
-            <br><br>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Foreman notes here..."> 
           </div>
         </div>
         <div class="card-footer">
