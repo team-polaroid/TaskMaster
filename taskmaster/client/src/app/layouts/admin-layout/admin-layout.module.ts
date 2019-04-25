@@ -6,13 +6,14 @@ import { AdminLayoutRoutes } from './admin-layout.routing';
 
 import { DashboardComponent } from '../../dashboard/dashboard.component';
 
-import { ProjectmanagerComponent } from '../../projectmanager/projectmanager.component'; // added 
-import { ProjectListComponent} from "../../project-list/project-list.component";
-import { LogoutComponent } from '../../logout/logout.component';      // added
+import { ProjectmanagerComponent } from '../../projectmanager/projectmanager.component';
+import { ProjectListComponent} from '../../project-list/project-list.component';
+import { LogoutComponent } from '../../logout/logout.component';
 
 import { ChartsModule } from 'ng2-charts';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ToastrModule } from 'ngx-toastr';
+import {ProjectNewComponent} from '../../project-new/project-new.component';
 
 @NgModule({
   imports: [
@@ -26,8 +27,9 @@ import { ToastrModule } from 'ngx-toastr';
   declarations: [
     DashboardComponent,
     ProjectListComponent,
-    LogoutComponent,         // added
-    ProjectmanagerComponent  // added 
+    ProjectNewComponent,
+    LogoutComponent,
+    ProjectmanagerComponent
   ]
 })
 

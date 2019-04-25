@@ -32,6 +32,8 @@ export class DashboardComponent implements OnInit {
   canSubmit = false;
   submitMsg: string;
 
+  foremanInput: any;
+
   // Upload image
   public imagePath;
   imgURL: any;
@@ -59,7 +61,7 @@ export class DashboardComponent implements OnInit {
     reader.readAsDataURL(files[0]);
     reader.onload = (_event) => {
         this.imgURL = reader.result;
-    }
+    };
   }
 
   clickViewTask() {
