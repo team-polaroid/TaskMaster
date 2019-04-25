@@ -32,6 +32,8 @@ export class DashboardComponent implements OnInit {
   canSubmit = false;
   submitMsg: string;
 
+  foremanInput: any;
+
   // Upload image
   public imagePath;
   imgURL: any;
