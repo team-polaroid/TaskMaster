@@ -3,6 +3,7 @@ Test set: org.polaroid.taskmaster.TaskmasterApplicationTests
 -------------------------------------------------------------------------------
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 107.944 s <<< FAILURE! - in org.polaroid.taskmaster.TaskmasterApplicationTests
 contextLoads(org.polaroid.taskmaster.TaskmasterApplicationTests)  Time elapsed: 0.002 s  <<< ERROR!
 java.lang.IllegalStateException: Failed to load ApplicationContext
@@ -19,6 +20,9 @@ Communications link failure
 The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
 Caused by: java.net.SocketTimeoutException: Read timed out
 
+=======
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.535 s - in org.polaroid.taskmaster.TaskmasterApplicationTests
+>>>>>>> 6ca8c836b238e75432abdd68197ed169c18118e5
 =======
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 18.535 s - in org.polaroid.taskmaster.TaskmasterApplicationTests
 >>>>>>> 6ca8c836b238e75432abdd68197ed169c18118e5
