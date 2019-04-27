@@ -18,7 +18,7 @@
             "polyfills": "src/polyfills.ts",
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/tmpolariod.ico"
             ],
             "styles": [
               "node_modules/perfect-scrollbar/css/perfect-scrollbar.css",
@@ -85,7 +85,7 @@
             ],
             "assets": [
               "src/assets",
-              "src/favicon.ico"
+              "src/tmpolariod.ico"
             ]
           }
         },

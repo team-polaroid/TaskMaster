@@ -267,6 +267,9 @@ SOFTWARE.
 
 
 
+ngx-permissions
+MIT
+
 ngx-toastr
 MIT
 The MIT License (MIT)

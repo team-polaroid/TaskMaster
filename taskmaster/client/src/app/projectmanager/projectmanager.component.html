@@ -16,13 +16,15 @@
   
   <div class="main-content">
     <div class="row">
-      <div class="col-lg-4">
+
+
+      <div class="col-lg-5">
         <div class="card card-chart">
           <div class="card-header">
-            <h5 class="card-category">Card Category 1</h5>
-            <h4 class="card-title">Card Title</h4>
-            <div ngbDropdown>
-              <button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
+            <!--<h5 class="card-category">Card Category 1</h5>-->
+            <h4 class="card-title">Accountability Report</h4>
+            <!--<div ngbDropdown>
+              button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
                 <i class="now-ui-icons loader_gear"></i>
               </button>
               <div ngbDropdownMenu class="dropdown-menu-right">
@@ -31,10 +33,10 @@
                 <a class="dropdown-item" href="#">Something else here</a>
                 <a class="dropdown-item text-danger" href="#">Remove Data</a>
               </div>
-            </div>
+            </div>-->
           </div>
           <div class="card-body">
-            <div class="chart-area">
+            <!-- <div class="chart-area">
               <canvas baseChart id="lineChartExample"
                           [datasets]="lineChartData"
                           [labels]="lineChartLabels"
@@ -43,15 +45,20 @@
                           [chartType]="lineChartType"
                           (chartHover)="chartHovered($event)"
                           (chartClick)="chartClicked($event)"></canvas>
-            </div>
+            </div> -->
+            Employee Table from DB not loaded
           </div>
           <div class="card-footer">
+            <!--
             <div class="stats">
               <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
             </div>
+          -->
           </div>
         </div>
       </div>
+
+      <!--
       <div class="col-lg-4 col-md-6">
         <div class="card card-chart">
           <div class="card-header">
@@ -71,7 +78,7 @@
           </div>
           <div class="card-body">
             <div class="chart-area">
-              <!-- <canvas id="lineChartExampleWithNumbersAndGrid"></canvas> -->
+                  <canvas id="lineChartExampleWithNumbersAndGrid"></canvas>
               <canvas baseChart id="lineChartExampleWithNumbersAndGrid"
                           [datasets]="lineChartWithNumbersAndGridData"
                           [labels]="lineChartWithNumbersAndGridLabels"
@@ -89,6 +96,9 @@
           </div>
         </div>
       </div>
+      -->
+
+      <!--
       <div class="col-lg-4 col-md-6">
         <div class="card card-chart">
           <div class="card-header">
@@ -114,7 +124,79 @@
           </div>
         </div>
       </div>
+    -->
+
+    <div class="col-lg-5">
+        <div class="card">
+          <div align="center" class="card-header">
+            <!-- <h5 class="card-category">Tasks</h5> -->
+            <h4 class="card-title">Sites</h4>
+          </div>
+          <div class="card-body">
+            <table class="table">
+              <thead>
+                <tr>
+                    <th class="text-center">#</th>
+                    <th>Site</th>
+                    <th class="text-right">View Tasks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                    <td class="text-center">1</td>
+                    <td>Site A</td>
+                    <td class="td-actions text-right">
+                     <!-- <button type="button" (click)="clickViewTask()" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                     just to get error out
+                        <i class="now-ui-icons ui-2_settings-90"></i>
+                      </button>
+                      <button type="button" (click)="confirmDelete()" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                          <i class="now-ui-icons ui-1_simple-remove"></i>
+                      </button>
+                      -->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">2</td>
+                    <td>Site B</td>
+                    <td class="td-actions text-right">
+                     <!-- <button type="button" (click)="clickViewTask()" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                     just to get error out
+                        <i class="now-ui-icons ui-2_settings-90"></i>
+                      </button>
+                      <button type="button" (click)="confirmDelete()" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                          <i class="now-ui-icons ui-1_simple-remove"></i>
+                      </button>
+                      -->
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-center">3</td>
+                    <td>Site C</td>
+                    <td class="td-actions text-right">
+                     <!-- <button type="button" (click)="clickViewTask()" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                     just to get error out
+                        <i class="now-ui-icons ui-2_settings-90"></i>
+                      </button>
+                      <button type="button" (click)="confirmDelete()" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                          <i class="now-ui-icons ui-1_simple-remove"></i>
+                      </button>
+                      -->
+                    </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="card-footer">
+            <div align="center">
+              <button class="btn btn-primary btn-round">Create Site</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
+
     <div class="row">
       <div class="col-md-6">
         <div class="card  card-tasks">
@@ -135,7 +217,7 @@
                         </label>
                       </div>
                     </td>
-                    <td class="text-left">Sign contract for "What are conference organizers afraid of?"</td>
+                    <td class="text-left">Send picture from Site A</td>
                     <td class="td-actions text-right">
                       <button type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
                         <i class="now-ui-icons ui-2_settings-90"></i>
@@ -154,7 +236,7 @@
                         </label>
                       </div>
                     </td>
-                    <td class="text-left">Lines From Great Russian Literature? Or E-mails From My Boss?</td>
+                    <td class="text-left">Fix cable at Site B</td>
                     <td class="td-actions text-right">
                       <button type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
                         <i class="now-ui-icons ui-2_settings-90"></i>
@@ -173,8 +255,7 @@
                         </label>
                       </div>
                     </td>
-                    <td class="text-left">Flooded: One year later, assessing what was lost and what was found when a ravaging rain swept through metro Detroit
-                    </td>
+                    <td class="text-left">Fix broken thing at Site C</td>
                     <td class="td-actions text-right">
                       <button type="button" rel="tooltip" title="" class="btn btn-info btn-round btn-icon btn-icon-mini btn-neutral" data-original-title="Edit Task">
                         <i class="now-ui-icons ui-2_settings-90"></i>
@@ -188,6 +269,9 @@
               </table>
             </div>
           </div>
+          <div align="center">
+            <button class="btn btn-primary btn-round">Create Task</button>
+          </div>
           <div class="card-footer ">
             <hr>
             <div class="stats">
@@ -196,7 +280,9 @@
           </div>
         </div>
       </div>
-      <div class="col-md-6">
+
+
+      <!-- <div class="col-md-6">
         <div class="card">
           <div class="card-header">
             <h5 class="card-category">All Persons List</h5>
@@ -295,7 +381,9 @@
             </div>
           </div>
         </div>
-      </div>
+      </div> -->
+
+
     </div>
   </div>
   
