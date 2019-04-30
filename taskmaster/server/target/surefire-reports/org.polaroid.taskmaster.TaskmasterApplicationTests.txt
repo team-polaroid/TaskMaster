@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: org.polaroid.taskmaster.TaskmasterApplicationTests
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 7.742 s - in org.polaroid.taskmaster.TaskmasterApplicationTests
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 79.048 s - in org.polaroid.taskmaster.TaskmasterApplicationTests
