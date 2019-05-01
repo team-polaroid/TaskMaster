@@ -13,6 +13,12 @@ export class ProjectmanagerComponent implements OnInit {
     confirm("Are you sure you want to delete Site?");
   }
 
+
+   // For displaying user name
+   private checkStorage = localStorage.getItem('currentUser');
+   private currentUserData = JSON.parse(this.checkStorage);
+   public currentProjectManager: string;
+
   public lineBigDashboardChartType;
   public gradientStroke;
   public chartColor;
@@ -65,6 +71,9 @@ export class ProjectmanagerComponent implements OnInit {
   }
   
   ngOnInit() {
+
+    this.currentProjectManager = this.currentUserData.firstName + " " +this.currentUserData.lastName;
+
 /*
     this.chartColor = "#FFFFFF";
     this.canvas = document.getElementById("bigDashboardChart");

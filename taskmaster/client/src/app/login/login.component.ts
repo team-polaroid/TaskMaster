@@ -5,6 +5,8 @@ import { first } from 'rxjs/operators';
 
 import { AuthenticationService, UserService } from '../_services';
 
+import { Role } from '../_models'; 
+
 @Component({ templateUrl: 'login.component.html' })
 export class LoginComponent implements OnInit {
     loginForm: FormGroup;
@@ -33,7 +35,7 @@ export class LoginComponent implements OnInit {
         });
 
         // get return url from route parameters or default to '/dashboard'
-        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'dashboard';    // default to dashboard for foremen
+        this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || 'login';    // default to dashboard for foremen
         //this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/projectmanager';    // default to dashboard for project managers
 
     }
@@ -59,13 +61,13 @@ export class LoginComponent implements OnInit {
                     var check = localStorage.getItem('currentUser');
                     console.log(check);
                     var retrievedData = JSON.parse(check);
-                    console.log(retrievedData)          
+                    console.log(retrievedData)
 
-                    if (retrievedData.id == 1 ) {       // project manager id is 1
+                    if (retrievedData.role == Role.Admin ) {       // if role is admin (projManager)
                       this.router.navigate(['projectmanager']);
                     }
-                    else if (retrievedData.id == 2) {   // foremen id is 2
-                      this.router.navigate([this.returnUrl]);
+                    else if (retrievedData.role == Role.User) {   // if role is foreman
+                      this.router.navigate(['dashboard']);
                     }
                 },
                 error => {

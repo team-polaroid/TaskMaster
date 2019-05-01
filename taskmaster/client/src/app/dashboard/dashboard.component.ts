@@ -39,6 +39,13 @@ export class DashboardComponent implements OnInit {
   imgURL: any;
   public message: string;
 
+
+  // For displaying user name
+  private checkStorage = localStorage.getItem('currentUser');
+  private currentUserData = JSON.parse(this.checkStorage);
+  public currentUserName: string;
+
+
   onRowClicked(row) {
     console.log('Row clicked: ', row);
   }
@@ -137,6 +144,9 @@ export class DashboardComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this.currentUserName = this.currentUserData.firstName + " " +this.currentUserData.lastName;
+
   //   this.chartColor = "#FFFFFF";
   //   this.canvas = document.getElementById("bigDashboardChart");
   //   this.ctx = this.canvas.getContext("2d");

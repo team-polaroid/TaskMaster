@@ -4,6 +4,8 @@ import { Router } from '@angular/router';
 //import { AuthService } from '../../auth.service';
 import { AuthenticationService } from '../../_services'
 
+import { Role } from '../../_models'
+
 declare interface RouteInfo {
     path: string;
     title: string;
@@ -73,10 +75,10 @@ export class SidebarComponent implements OnInit {
     var retrievedData = JSON.parse(check);
     console.log(retrievedData)          
 
-    if (retrievedData.id == 1 ) {       // project manager id is 1
+    if (retrievedData.role == Role.Admin ) {       // project manager
       this.menuItems = ROUTES2.filter(menuItem => menuItem);
     }
-    else if (retrievedData.id == 2) {   // foremen id is 2
+    else if (retrievedData.role == Role.User) {   // foremen 
       this.menuItems = ROUTES.filter(menuItem => menuItem);
     }
   }
