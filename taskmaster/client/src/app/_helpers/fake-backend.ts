@@ -7,13 +7,14 @@ import { User, Role } from '../_models';
 
 @Injectable()
 export class FakeBackendInterceptor implements HttpInterceptor {
+
     intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const users: User[] = [
             { id: 1, username: 'projectmanager', password: 'password2', firstName: 'Mr.', lastName: 'ProjectManager', role: Role.Admin },
             { id: 2, username: 'foreman', password: 'password1', firstName: 'Dr.', lastName: 'Seuss', role: Role.User },
             { id: 3, username: 'bob_builder', password: 'password3', firstName: 'Bob', lastName: 'Builder', role: Role.Admin },
             { id: 4, username: 'foreman01', password: 'password4', firstName: 'Steve', lastName: 'Rogers', role: Role.User },
-            { id: 5, username: 'foreman002', password: 'password5', firstName: 'Jim', lastName: 'Banner', role: Role.User }
+            { id: 5, username: 'foreman002', password: 'password5', firstName: 'Jim', lastName: 'Neutron', role: Role.User }
         ];
 
         const authHeader = request.headers.get('Authorization');
@@ -90,3 +91,11 @@ export let fakeBackendProvider = {
     useClass: FakeBackendInterceptor,
     multi: true
 };
+
+export const usersDB: User[] = [
+    { id: 1, username: 'projectmanager', password: 'password2', firstName: 'Mr.', lastName: 'ProjectManager', role: Role.Admin },
+    { id: 2, username: 'foreman', password: 'password1', firstName: 'Dr.', lastName: 'Seuss', role: Role.User },
+    { id: 3, username: 'bob_builder', password: 'password3', firstName: 'Bob', lastName: 'Builder', role: Role.Admin },
+    { id: 4, username: 'foreman01', password: 'password4', firstName: 'Steve', lastName: 'Rogers', role: Role.User },
+    { id: 5, username: 'foreman002', password: 'password5', firstName: 'Jim', lastName: 'Neutron', role: Role.User }
+];

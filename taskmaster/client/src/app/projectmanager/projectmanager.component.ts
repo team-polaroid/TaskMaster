@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import * as Chartist from 'chartist';
+import { HttpInterceptorHandler } from '@angular/common/http/src/interceptor';
 
+import { usersDB } from '../_helpers'
+
+import { Role } from '../_models';
 
 @Component({
   selector: 'app-projectmanager',
@@ -18,6 +22,17 @@ export class ProjectmanagerComponent implements OnInit {
    private checkStorage = localStorage.getItem('currentUser');
    private currentUserData = JSON.parse(this.checkStorage);
    public currentProjectManager: string;
+
+
+   // For checking all employees for accountability report
+   private employeeCheck = JSON.stringify(usersDB);
+   private allEmployeeData = {"employees": JSON.parse(this.employeeCheck)};
+   public employeeName: string; 
+   public employeeID: string;
+   public index: number = 0;
+   public xID: number = 0;
+
+
 
   public lineBigDashboardChartType;
   public gradientStroke;
@@ -69,10 +84,58 @@ export class ProjectmanagerComponent implements OnInit {
       return "rgb(" + r + ", " + g + ", " + b + ")";
     }
   }
+
+  public employeeEntry() {
+
+    for (let i of this.allEmployeeData.employees) {
+      if (this.allEmployeeData.employees[this.index].role == Role.User) {
+        this.employeeName = this.allEmployeeData.employees[this.index].firstName + " " + this.allEmployeeData.employees[this.index].lastName;
+        this.index++;
+        return this.employeeName;
+      }
+      else
+      {
+      this.index++;
+      }
+    }
+  }
+
+  public userID() {
+
+    for (let i of this.allEmployeeData.employees) {
+      if (this.allEmployeeData.employees[this.xID].role == Role.User) {
+        this.employeeID = this.allEmployeeData.employees[this.xID].id;
+        this.xID++;
+        return this.employeeID;
+      }
+      else
+      {
+      this.xID++;
+      }
+    }
+  }
   
   ngOnInit() {
 
     this.currentProjectManager = this.currentUserData.firstName + " " +this.currentUserData.lastName;
+
+    // console.log(this.allEmployeeData);
+
+    // this.employeeName = this.allEmployeeData.employees[3].firstName;
+    // console.log(this.employeeName);
+
+    // let index: number = 0;
+
+    // for (let i of this.allEmployeeData.employees) {
+    //   if (this.allEmployeeData.employees[this.index].role == Role.User) {
+    //     console.log(this.index + ": " + this.allEmployeeData.employees[this.index].firstName + " " + this.allEmployeeData.employees[this.index].lastName);
+    //     break;
+    //   }
+    //   else
+    //   {
+    //   this.index++;
+    //   }
+    // }
 
 /*
     this.chartColor = "#FFFFFF";

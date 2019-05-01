@@ -17,41 +17,65 @@
 
     <!-- Accountability Report -->
     <div class="col-lg-5">
-      <div class="card card-chart">
-        <div class="card-header">
-          <!--<h5 class="card-category">Card Category 1</h5>-->
+      <div class="card">
+        <div align="center" class="card-header">
+          <!-- <h5 class="card-category">Tasks</h5> -->
           <h4 class="card-title">Accountability Report</h4>
-          <!--<div ngbDropdown>
-              button type="button" class="btn btn-round btn-default dropdown-toggle btn-simple btn-icon no-caret" ngbDropdownToggle>
-                <i class="now-ui-icons loader_gear"></i>
-              </button>
-              <div ngbDropdownMenu class="dropdown-menu-right">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                <a class="dropdown-item text-danger" href="#">Remove Data</a>
-              </div>
-            </div>-->
         </div>
         <div class="card-body">
-          <!-- <div class="chart-area">
-              <canvas baseChart id="lineChartExample"
-                          [datasets]="lineChartData"
-                          [labels]="lineChartLabels"
-                          [colors]="lineChartColors"
-                          [options]="lineChartOptions"
-                          [chartType]="lineChartType"
-                          (chartHover)="chartHovered($event)"
-                          (chartClick)="chartClicked($event)"></canvas>
-            </div> -->
-          Employee Table from Database currently unavailable
-        </div>
-        <div class="card-footer">
-          <!--
-            <div class="stats">
-              <i class="now-ui-icons arrows-1_refresh-69"></i> Just Updated
-            </div>
-          -->
+          <table class="table">
+            <thead>
+              <tr>
+                <th class="text-center">ID</th>
+                <th>Employee</th>
+                <th class="text-right">Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="text-center">{{userID('employeeID')}}</td>
+                <td>{{employeeEntry('employeeName')}}</td>
+                <td class="td-actions text-right">
+                  <!-- <button type="button" (click)="clickViewTask()" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                     just to get error out
+                        <i class="now-ui-icons ui-2_settings-90"></i>
+                      </button>
+                      <button type="button" (click)="confirmDelete()" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                          <i class="now-ui-icons ui-1_simple-remove"></i>
+                      </button>
+                      -->
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">{{userID('employeeID')}}</td>
+                <td>{{employeeEntry('employeeName')}}</td>
+                <td class="td-actions text-right">
+                  <!-- <button type="button" (click)="clickViewTask()" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                     just to get error out
+                        <i class="now-ui-icons ui-2_settings-90"></i>
+                      </button>
+                      <button type="button" (click)="confirmDelete()" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                          <i class="now-ui-icons ui-1_simple-remove"></i>
+                      </button>
+                      -->
+                </td>
+              </tr>
+              <tr>
+                <td class="text-center">{{userID('employeeID')}}</td>
+                <td>{{employeeEntry('employeeName')}}</td>
+                <td class="td-actions text-right">
+                  <!-- <button type="button" (click)="clickViewTask()" rel="tooltip" class="btn btn-success btn-sm btn-icon">
+                     just to get error out
+                        <i class="now-ui-icons ui-2_settings-90"></i>
+                      </button>
+                      <button type="button" (click)="confirmDelete()" rel="tooltip" class="btn btn-danger btn-sm btn-icon">
+                          <i class="now-ui-icons ui-1_simple-remove"></i>
+                      </button>
+                      -->
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
 
